@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料汇 · 世界杯故事线</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fce8d0 0%, #fbd9b0 40%, #f8cb9a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            line-height: 1.7;
+            color: #2e241e;
+        }
+
+        .card {
+            max-width: 780px;
+            width: 100%;
+            background: rgba(255, 250, 240, 0.85);
+            backdrop-filter: blur(3px);
+            border-radius: 48px 32px 48px 32px;
+            box-shadow: 0 20px 40px -12px rgba(120, 70, 30, 0.35), 0 6px 18px rgba(0,0,0,0.05);
+            padding: 2.8rem 2.5rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #4d3425;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #ecbc8f;
+            display: inline-block;
+            padding-bottom: 0.4rem;
+        }
+
+        .opener {
+            font-size: 1.2rem;
+            background: #fef2e4;
+            padding: 1.2rem 1.8rem;
+            border-radius: 100px 30px 100px 30px;
+            margin-bottom: 1.8rem;
+            color: #3e2c20;
+            box-shadow: inset 0 1px 4px rgba(255,215,170,0.6);
+            border: 1px solid #f0dcc6;
+        }
+
+        .opener strong {
+            font-weight: 600;
+            color: #8b5a3a;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+        }
+
+        .highlight-block {
+            background: #f7e7d4;
+            padding: 1.2rem 2rem;
+            border-radius: 40px 12px 40px 12px;
+            margin: 1.8rem 0;
+            border-left: 6px solid #dbaa7a;
+            box-shadow: 0 2px 10px rgba(160, 100, 50, 0.08);
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.4rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .feature-item {
+            background: #fcf3e8;
+            padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            border: 1px solid #e7cfb5;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 1px 3px rgba(185, 130, 70, 0.12);
+        }
+
+        .feature-item::before {
+            content: "⚽";
+            font-size: 1.2rem;
+            line-height: 1;
+            display: inline-block;
+            margin-right: 2px;
+        }
+
+        .link-sentence {
+            background: #fff9f0;
+            padding: 1.2rem 1.8rem;
+            border-radius: 60px 20px 60px 20px;
+            margin: 2rem 0 0.8rem 0;
+            border: 1px dashed #dbb998;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: #7f5539;
+            font-weight: 500;
+            padding: 0.1rem 0.05rem;
+            border-bottom: 2px solid #dba872;
+            transition: all 0.15s ease;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background: #edceb0;
+            color: #3f2a1b;
+            border-bottom-color: #b57d54;
+        }
+
+        .faq-mini {
+            margin-top: 2.2rem;
+            background: #fcf1e4;
+            padding: 1.4rem 1.8rem;
+            border-radius: 30px 8px 30px 8px;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #4d3425;
+            padding: 0.3rem 0;
+            list-style: "📌 ";
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-mini summary::marker {
+            content: "";
+        }
+
+        .faq-mini details[open] summary {
+            color: #7a5337;
+        }
+
+        .faq-mini .answer {
+            padding: 0.5rem 1rem 0.2rem 1.5rem;
+            color: #4e3a2c;
+            border-left: 2px solid #dbb28c;
+        }
+
+        .closing {
+            margin-top: 2rem;
+            text-align: right;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #6f5542;
+            padding-top: 0.6rem;
+            border-top: 1px solid #e6cfb7;
+        }
+
+        @media (max-width: 550px) {
+            .card {
+                padding: 2rem 1.4rem;
+                border-radius: 32px 16px 32px 16px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .opener {
+                font-size: 1rem;
+                padding: 1rem 1.2rem;
+            }
+            .feature-grid {
+                gap: 0.5rem 0.8rem;
+            }
+            .feature-item {
+                font-size: 0.9rem;
+                padding: 0.3rem 1rem;
+            }
+            .link-sentence {
+                padding: 1rem 1.2rem;
+                font-size: 0.98rem;
+            }
+            .faq-mini {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .card {
+                padding: 1.6rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>📋 资料手记 · 世界杯</h1>
+
+    <div class="opener">
+        <strong>四年一度，不止是赛程表。</strong> 从赛前情报到历史数据，从分组抽签到冷门复盘——总有人想把碎片整理成线索。
+    </div>
+
+    <p>
+        身边聊球的朋友越来越多，但每次想翻查某届比赛的射手榜、或者某支球队的完整征程，信息的零散总让人头大。很多平台的报道热闹归热闹，却很少把资料摊开、做成安静索引的样子。我慢慢养成了一个习惯：把相关的赛事记录、参赛名单、经典录像链接、甚至裁判数据都收在一起，像搭积木一样按年份和阶段排好。
+    </p>
+
+    <p>
+        有时候是深夜翻出旧报纸的电子版，有时候是盯着维基百科的表格发呆，更多时候是从社媒的碎片里拼出脉络。整理 <a href="https://h5-asia-shijiebei.com">世界杯</a> 的信息也是一样的感觉——每个进球、每张红牌、每段采访背后都连着好多故事，而索引就是那根细线。
+    </p>
+
+    <div class="highlight-block">
+        <span style="font-weight: 500;">📌 我平时收集资料时会特别留意这几块：</span>
+        <div class="feature-grid">
+            <span class="feature-item">历届冠军及决赛比分</span>
+            <span class="feature-item">小组赛完整积分表</span>
+            <span class="feature-item">金靴 / 金球 / 最佳阵容</span>
+            <span class="feature-item">主办城市与球场变迁</span>
+            <span class="feature-item">经典逆转与冷门全记录</span>
+            <span class="feature-item">裁判选派与争议判罚整理</span>
+        </div>
+        <p style="margin-top: 0.6rem; margin-bottom: 0;">这些条目放在一起，慢慢就能看出各个时代踢法的变化、地域风格的迁移，甚至规则调整带来的影响。比单看某一届有意思多了。</p>
+    </div>
+
+    <p>
+        很多人觉得资料索引很枯燥，但我偏偏觉得这种“把散落的珠子串起来”的过程特别有踏实感。比如某一年小组赛的净胜球连环套，或者某位门将在连续三届淘汰赛里的扑点数据——当你亲手把它们对齐、归类，那种“原来如此”的瞬间让人上瘾。
+    </p>
+
+    <div class="link-sentence">
+        ⚡ 如果你也喜欢这种整理方式，不妨来我常去的资料站看看，那里专注沉淀关于 <a href="https://h5-asia-shijiebei.com">世界杯</a> 的赛事档案和索引清单，页面风格简单直接，没有花哨推送。
+    </div>
+
+    <div class="faq-mini">
+        <details>
+            <summary>为什么只做资料索引？不做预测和分析？</summary>
+            <div class="answer">每个人看球都有自己的判断，索引只是把事实和记录摆好，不替人下结论。这样不管是老球迷还是新朋友，都能拿原始资料自己去想、去聊。</div>
+        </details>
+        <details>
+            <summary>资料更新频率怎么样？</summary>
+            <div class="answer">通常每届大赛结束后一周内会补充完整数据，日常则整理一些历史冷门记录和翻译外网统计。频率不高，但每一条都经过核对。</div>
+        </details>
+        <details>
+            <summary>我会在这里看到大量广告吗？</summary>
+            <div class="answer">不会。整个站点以资料卡片和列表为主，没有任何弹窗或诱导点击的横幅。干净索引是底线。</div>
+        </details>
+    </div>
+
+    <div class="closing">
+        —— 把线索留给眼睛，把判断留给脑子。
+    </div>
+</div>
+
+</body>
+</html>
